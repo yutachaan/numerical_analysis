@@ -1,0 +1,7 @@
+.DS_Store
+images/
+*.pdf
+報告書.md
+*.dSYM/
+a.out
+.vscode/

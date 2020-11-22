@@ -164,5 +164,5 @@ void least_squares(int n, double x[], double y[]) {
   double b = ( n * sxy - sy *  sx) / (n * sx2 - sx * sx);
 
   // 解を出力する
-  printf("y = %f + %fx", a, b);
+  printf("y = %f + %fx\n", a, b);
 }
