@@ -6,18 +6,20 @@ double func(double x) {
 }
 
 int main(void) {
+  int a = 1;         // 積分区間の下限
+  int b = 2;         // 積分区間の上限
   double n, h, s, x;
   for (int i = 1; i <= 10; i++) {
-    n = pow(2, i);
-    h = (2 - 1) / n;
-    s = 0;
+    n = pow(2, i);   // 分割数
+    h = (b - a) / n; // 分割後の1区間の大きさ
+    s = 0;           // 積分値
 
     for (int j = 1; j < n; j++) {
-      x = 1 + h * j;
+      x = a + h * j;
       s += 2 * func(x);
     }
 
-    s = 0.5 * (s + func(1) + func(2)) * h;
+    s = 0.5 * (s + func(a) + func(b)) * h;
     printf("n = 2^%d: %f\n", i, s);
   }
 

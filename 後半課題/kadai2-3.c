@@ -6,14 +6,16 @@ double func(double x, double y) {
 }
 
 int main(void) {
+  int a = 0;         // 区間の下限
+  int b = 2;         // 区間の上限
   double n, h, x, y;
   for (int i = 1; i <= 10; i++) {
-    n = pow(2, i);
-    h = (2 - 0) / n;
-    x = 0;
+    n = pow(2, i);   // 分割数
+    h = (b - a) / n; // 分割後の1区間の大きさ
+    x = a;
     y = 1;
 
-    while (x < 2) {
+    while (x < b) {
       y += h * func(x, y);
       x += h;
     }
